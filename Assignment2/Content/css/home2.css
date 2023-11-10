@@ -1,0 +1,115 @@
+﻿.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.retirement-banner1 {
+    background-color: rgb(217, 252, 255);
+    overflow: hidden;
+}
+
+footer {
+    background-color: rgb(217, 252, 255) !important;
+}
+
+
+
+/*Prologue*/
+.main-part {
+    height: 1050px;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 1100px;
+    margin: 0 auto;
+}
+.chronicle {
+    position: relative;
+    margin-top:15px;
+}
+
+.blueblock {
+    background-color: rgb(79, 156, 238);
+    width: 5px;
+    height: 35px;
+}
+#da {
+    font-size: 25px;
+    line-height: 35px; /* 设置行高与蓝色长方形的高度相同 */
+    position: absolute;
+    top: 0; /* 定位到容器顶部 */
+    padding-left: 20px;
+    font-weight:bolder;
+}
+.prologue-content{
+    width:870px;
+    float:left;
+    background-color :white;
+    margin-right:20px;
+    margin-top:25px;
+}
+.prologue-video {
+    width: 210px;
+    margin-top: 23px;
+    float: left;
+    position: relative;
+    top: -525px;
+}
+.prologue-main {
+    padding-top:10px;
+}
+
+.prologue-left-image {
+    height:auto;
+    float:left;
+    padding-left:20px;
+}
+
+.prologue-center {
+  margin-left:15px;
+  float:left;
+  margin-right:15px;
+}
+
+.prologue-centerimage {
+}
+
+p {
+    margin: 0; /* 移除段落的默认外边距 */
+}
+.prologue-video p {
+    background-color: white;
+    border: 1px solid rgb(229, 229, 229);
+    border-bottom: 2px solid rgb(229, 229, 229);
+}
+.prologue-v {
+    margin-bottom: 24px;
+}
+
+.myVideo {
+    background-color: white;
+    width: 210px;
+    height: 124px;
+}
+.word{
+    margin-top:20px;
+    font-size:14px;
+    line-height:17px;
+    font-weight:lighter;
+}
+.word p{
+    margin-bottom:10px;
+}
+.word #a{
+    padding-bottom:5px;
+}
+
+.blue {
+    padding-bottom:5px;
+    font-size: 20px !important;
+    color: rgb(79, 156, 238);
+    font-weight:bold;
+}
+.myvideo2{
+    margin-bottom:15px;
+}
+

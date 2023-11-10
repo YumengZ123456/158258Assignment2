@@ -1,0 +1,180 @@
+﻿
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.body3 {
+    background-color: rgb(204, 229, 255);
+    overflow:hidden;
+    height:735px;
+}
+.match-start{
+    background-color:white;
+    margin-top:26px;
+}
+
+.chronicle {
+    margin-top: 43px;
+    position: relative;
+    height: 650px;
+}
+
+.blueblock {
+    background-color: rgb(79, 156, 238);
+    width: 16px;
+    height: 35px;
+}
+
+#da {
+    font-size: 25px;
+    line-height: 35px; 
+    position: absolute;
+    top: 0; 
+    padding-left: 42px;
+}
+#da >p{
+    margin-right:15px;
+    float:left;
+}
+
+.match-count {
+    margin-top: 6px;
+    margin-bottom:10px;
+    padding-left:5px;
+    padding-right:5px;
+    background-color: rgba(132,154,232,.15);
+    border-radius: 12px;
+    color: #5c7ae6;
+    display: inline-block;
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    top: 40px;
+    float:left;
+}
+
+.chronicle-content {
+    margin-left: 40px;
+    position:absolute;
+    top:70px;
+    width:1000px;
+    margin-top:20px;
+}
+.blueback {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgba(132,154,232,.15);
+    border-radius: 12px;
+    color: #5c7ae6;
+    display: inline-block;
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    margin-right:15px;
+}
+.f4{
+    margin-left:50px;
+}
+.form-group {
+    float: left;
+}
+.input-group-append {
+    float:left;
+}
+.btn btn-primary {
+    float: left;
+}
+.form-group {
+    margin-left: 5px;
+}
+.input-group-append button{
+    margin-left:15px;
+}
+
+/*table*/
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+    .table th {
+        background-color: #3498db;
+        padding: 10px;
+        text-align: left;
+        color: white;
+    }
+
+    .table tr:nth-child(odd) {
+        background-color: #ecf0f1;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #d4e6f1;
+    }
+table td {
+    color: #3498db; 
+}
+
+    .table td, .table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .table tr:hover {
+        background-color: #badcf8;
+    }
+
+    .table a {
+        text-decoration: none;
+        color: #007bff;
+        margin: 0 5px;
+    }
+
+        .table a:hover {
+            text-decoration: underline;
+        }
+
+/*page*/
+
+div.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul.pagination li {
+    display: inline;
+    margin-right: 5px;
+    padding: 5px;
+}
+    ul.pagination li a {
+        text-decoration: none;
+        color: black;
+    }
+    ul.pagination li.active {
+        background-color: rgb(79, 156, 238);
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    ul.pagination li a:hover {
+        background-color: rgb(79, 156, 238);
+        color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    ul.pagination li.prev, ul.pagination li.next {
+        display: inline;
+        padding: 5px;
+    }
+
+    ul.pagination li.disabled {
+        color: #ccc;
+        cursor: not-allowed;
+    }
+    .pagination-container{
+        margin-top:10px;
+    }

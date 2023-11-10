@@ -1,0 +1,90 @@
+﻿
+@model Assignment2.ViewModels.MatchIndexViewModel
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="~/Content/css/layout.css">
+<link rel="stylesheet" href="~/Content/css/match.css">
+
+<div class="body3">
+    <div class="match-start wholewidth">
+        <div class="chronicle">
+            <div class="blueblock"></div>
+            <div id="da">
+                <p>Season Match Schedule</p>
+                <p class="match-count">
+                    @(String.IsNullOrWhiteSpace (Model.Search)? "Showing all" : "You search for " + Model.Search + " found")
+                    @Model.Matches.TotalItemCount matches
+                </p>
+                @using (Html.BeginForm("Index", "Matches", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                {
+                    <div class="input-group">
+                        <div class="form-group">
+                            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search Match", style = "width: 250px;" })
+                        </div>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="chronicle-content">
+ 
+                <p>
+                    @using (Html.BeginForm("Index", "Matches", FormMethod.Get))
+                    {
+                        <label class="blueback">Filter by season:</label>
+                        @Html.DropDownListFor(vm => vm.Season, Model.SeaFilterItems, "All");
+                        <label class="blueback f4">Sort by Date:</label>
+                        @Html.DropDownListFor(vm => vm.SortBy, new SelectList(Model.Sorts, "Value", "Key"), "Default")
+
+                        <input type="Submit" value="Filter" />
+                        <input type="hidden" name="Search" id="Search" value="@ViewBag.Search" />
+                    }
+                </p>
+               
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Season)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches.First().Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches.First().Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matches.First().Medal)
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model.Matches)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Season.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Medal)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+                <div class="pagination">
+                    Page @(Model.Matches.PageCount <Model.Matches.PageNumber ? 0 : Model.Matches.PageNumber) of @Model.Matches.PageCount
+                    @Html.PagedListPager(Model.Matches, page => Url.Action("Index", new { category = Model.Season, Search = Model.Search, sortBy = @Model.SortBy, page }))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
