@@ -4,11 +4,14 @@
 @{
     ViewBag.Title = "Index";
 }
+<titlle>Season Repertoires</titlle>
+<meta name="keywords" content="Yuzuru Hanyu,repertoire">
+
 <link rel="stylesheet" href="~/Content/css/layout.css">
 <link rel="stylesheet" href="~/Content/css/reperotire.css">
 
 <body>
-    <div  class="players wholewidth">
+    <div class="players wholewidth">
         <div class="music-player wholewidth">
             <p>Heaven and Earth</p>
             <audio id="audio" controls>
@@ -54,83 +57,83 @@
             </div>
         </div>
     </div>
-        <div class="match-start wholewidth">
-            <div class="chronicle">
-                <div class="blueblock"></div>
-                <div id="da">
-                    <p>Season Repertoires Schedule</p>
-                    <p class="match-count">
-                        @(String.IsNullOrWhiteSpace (Model.Search)? "Showing all":"You search for " + Model.Search + "found")
-                        @Model.Repertoires.TotalItemCount repertoires
-                    </p>
-                    @using (Html.BeginForm("Index", "Repertoires", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
-                    {
-                        <div class="input-group">
-                   
-                            <div class="form-group">
-                                @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search Repertoire", style = "width: 250px;" })
-                            </div>
-                            <div class="input-group-append">
-         
-                                <button type="submit" class="btn btn-primary">submit</button>
-                            </div>
-                        </div>
-                    }
-                </div>
-                <div class="chronicle-content">
-                    <p>
-                        @using (Html.BeginForm("Index", "Repertoires", FormMethod.Get))
-                        {
-                            <label class="darkblue">Filter by season:</label>
-                            @Html.DropDownListFor(vm => vm.Season, Model.SeaFilterItems, "All");
-                            <input type="Submit" value="Filter" />
-                            <input type="hidden" name="Search" id="Search" value="@Model.Search" />
-                        }
-                    </p>
+    <div class="match-start wholewidth">
+        <div class="chronicle">
+            <div class="blueblock"></div>
+            <div id="da">
+                <p>Season Repertoires Schedule</p>
+                <p class="match-count">
+                    @(String.IsNullOrWhiteSpace (Model.Search)? "Showing all":"You search for " + Model.Search + "found")
+                    @Model.Repertoires.TotalItemCount repertoires
+                </p>
+                @using (Html.BeginForm("Index", "Repertoires", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                {
+                    <div class="input-group">
 
-                    <table class="table">
+                        <div class="form-group">
+                            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search Repertoire", style = "width: 250px;" })
+                        </div>
+                        <div class="input-group-append">
+
+                            <button type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="chronicle-content">
+                <p>
+                    @using (Html.BeginForm("Index", "Repertoires", FormMethod.Get))
+                    {
+                        <label class="darkblue">Filter by season:</label>
+                        @Html.DropDownListFor(vm => vm.Season, Model.SeaFilterItems, "All");
+                        <input type="Submit" value="Filter" />
+                        <input type="hidden" name="Search" id="Search" value="@Model.Search" />
+                    }
+                </p>
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Season)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Repertoires.First().ShortProgram)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Repertoires.First().LongProgram)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Repertoires.First().Gala)
+                        </th>
+
+                    </tr>
+
+                    @foreach (var item in Model.Repertoires)
+                    {
                         <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Season)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Repertoires.First().ShortProgram)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Repertoires.First().LongProgram)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Repertoires.First().Gala)
-                            </th>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Season.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShortProgram)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LongProgram)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gala)
+                            </td>
 
                         </tr>
+                    }
 
-                        @foreach (var item in Model.Repertoires)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Season.Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ShortProgram)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.LongProgram)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Gala)
-                                </td>
-
-                            </tr>
-                        }
-
-                    </table>
-                    <div class="pagination">
-                        Page @(Model.Repertoires.PageCount <Model.Repertoires.PageNumber ? 9 : Model.Repertoires.PageNumber) of @Model.Repertoires.PageCount
-                        @Html.PagedListPager(Model.Repertoires, page => Url.Action("Index", new { season = Model.Season, Search = Model.Search, page }))
-                    </div>
+                </table>
+                <div class="pagination">
+                    Page @(Model.Repertoires.PageCount <Model.Repertoires.PageNumber ? 9 : Model.Repertoires.PageNumber) of @Model.Repertoires.PageCount
+                    @Html.PagedListPager(Model.Repertoires, page => Url.Action("Index", new { season = Model.Season, Search = Model.Search, page }))
                 </div>
             </div>
         </div>
+    </div>
 </body>
 <script src="~/Scripts/repertoire.js"></script>

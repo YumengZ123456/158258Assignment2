@@ -4,6 +4,9 @@
 @{
     ViewBag.Title = "Index";
 }
+<titlle>Matches</titlle>
+<meta name="keywords" content="Yuzuru Hanyu, medal, Match,Season">
+
 <link rel="stylesheet" href="~/Content/css/layout.css">
 <link rel="stylesheet" href="~/Content/css/match.css">
 
@@ -30,7 +33,7 @@
                 }
             </div>
             <div class="chronicle-content">
- 
+
                 <p>
                     @using (Html.BeginForm("Index", "Matches", FormMethod.Get))
                     {
@@ -43,7 +46,7 @@
                         <input type="hidden" name="Search" id="Search" value="@ViewBag.Search" />
                     }
                 </p>
-               
+
                 <table class="table">
                     <tr>
                         <th>
