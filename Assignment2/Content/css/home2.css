@@ -74,7 +74,7 @@ footer {
 }
 
 p {
-    margin: 0; /* 移除段落的默认外边距 */
+    margin: 0;
 }
 .prologue-video p {
     background-color: white;

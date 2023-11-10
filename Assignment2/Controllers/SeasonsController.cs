@@ -36,7 +36,7 @@ namespace Assignment2.Controllers
             {
                 return year;
             }
-            return 0; // 默认返回值，可根据需要修改
+            return 0; 
         }
 
         // GET: Seasons/Details/5

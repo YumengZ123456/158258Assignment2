@@ -243,7 +243,6 @@ em1 {
 
 .container {
     position: relative;
-    /* 溢出隐藏 */
     overflow: hidden;
 }
 
@@ -263,9 +262,7 @@ em1 {
     .scroller-li img {
         width: 200px;
         height: 150px;
-        /* 保持原有尺寸比例，裁切长边 */
         object-fit: cover;
-        /* 图片定位正中间 */
         object-position: center;
     }
 
@@ -275,10 +272,10 @@ em1 {
     padding-top: 50px;
 }
 
-/*锚点*/
+/*anchor point*/
 .anchor-links {
     position: fixed;
-    top: 50%; /* 位于页面高度的一半处 */
+    top: 50%; 
     right: 150px;
     transform: translateY(-50%);
 }
